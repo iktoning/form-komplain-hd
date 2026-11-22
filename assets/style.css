@@ -181,9 +181,28 @@ textarea {
   margin-bottom: 4px;
 }
 
+/* Paksa semua input, select, dan button di toolbar memiliki tinggi yang sama */
 .toolbar select,
-.toolbar input {
-  padding: 8px 10px;
+.toolbar input,
+.toolbar .btn {
+  height: 38px;
+  padding: 0 12px; /* padding awal 8px 10px */
+  line-height: 36px;
+  font-size: 14px;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+/* Khusus untuk input angka (Tahun) agar tidak ada spinner panah bawaan yang aneh */
+.toolbar input[type="number"] {
+  padding-right: 5px;
+}
+
+/* Memastikan tombol dengan background warna tetap rapi */
+.toolbar .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .toolbar .spacer {
