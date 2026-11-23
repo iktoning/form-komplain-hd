@@ -171,6 +171,47 @@ const config = {
 flatpickr("#waktu_komplain", config);
 flatpickr("#waktu_penanganan", config);
 flatpickr("#waktu_konfirmasi", config);
+
+// GET data pelanggan berdasarkan CID
+function fetchDataPelanggan() {
+    const cid = document.getElementById('input-cid').value.trim();
+    const loadingText = document.getElementById('loading-text');
+    const inputNama = document.getElementById('input-nama');
+    const inputAlamat = document.getElementById('input-alamat');
+
+    if (cid === '') return;
+
+    loadingText.style.display = 'block';
+
+    // Memanggil file perantara PHP kita
+    fetch(`../proses/get_pelanggan.php?cid=${encodeURIComponent(cid)}`)
+        .then(response => response.json())
+        .then(data => {
+            loadingText.style.display = 'none';
+            
+            if (data.status === 'success') {
+                inputNama.value = data.nama;
+                inputAlamat.value = data.alamat;
+                
+                // Efek visual (opsional)
+                inputNama.style.backgroundColor = '#e8f4ec';
+                inputAlamat.style.backgroundColor = '#e8f4ec';
+                setTimeout(() => {
+                    inputNama.style.backgroundColor = '#fff';
+                    inputAlamat.style.backgroundColor = '#fff';
+                }, 1500);
+            } else {
+                alert(data.message || 'Data pelanggan tidak ditemukan.');
+                inputNama.value = '';
+                inputAlamat.value = '';
+            }
+        })
+        .catch(error => {
+            loadingText.style.display = 'none';
+            console.error('Error:', error);
+            alert('Terjadi kesalahan jaringan.');
+        });
+}
 </script>
 
 </body>
