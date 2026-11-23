@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ . '/../config/db.php';
-require_once __DIR__ . '/../config/helper.php';
+require_once __DIR__ . '/../../config/db.php';
+require_once __DIR__ . '/../../config/helper.php';
 
 $bulan = isset($_GET['bulan']) ? (int)$_GET['bulan'] : (int)date('n');
 $tahun = isset($_GET['tahun']) ? (int)$_GET['tahun'] : (int)date('Y');
@@ -47,7 +47,7 @@ $namaBulan = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laporan Komplain</title>
-    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body>
 <div class="container" style="max-width: 1600px;">

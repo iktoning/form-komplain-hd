@@ -1,8 +1,7 @@
 <?php
-// laporan/export.php
-require_once __DIR__ . '/../config/db.php';
-require_once __DIR__ . '/../config/helper.php';
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../config/db.php';
+require_once __DIR__ . '/../../config/helper.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;

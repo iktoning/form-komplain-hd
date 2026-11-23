@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ . '/../config/db.php';
-require_once __DIR__ . '/../config/helper.php';
+require_once __DIR__ . '/../../config/db.php';
+require_once __DIR__ . '/../../config/helper.php';
 
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 if ($id <= 0) {
@@ -38,7 +38,7 @@ function toInputVal($dt) {
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/id.js"></script>
 
-    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body>
 <div class="container">

@@ -1,3 +1,3 @@
 <?php
-header('Location: laporan/index.php');
+header('Location: modul_reguler/laporan/index.php');
 exit;

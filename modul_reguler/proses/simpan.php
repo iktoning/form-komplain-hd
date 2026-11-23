@@ -1,13 +1,12 @@
 <?php
 
-require_once __DIR__ . '/../config/db.php';
+require_once __DIR__ . '/../../config/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: ../laporan/index.php');
+    header('Location: ../form/input.php');
     exit;
 }
 
-$id               = (int)($_POST['id'] ?? 0);
 $nama_client      = trim($_POST['nama_client'] ?? '');
 $cid              = trim($_POST['cid'] ?? '');
 $alamat           = trim($_POST['alamat'] ?? '');
@@ -21,13 +20,15 @@ $teknisi          = trim($_POST['teknisi'] ?? '');
 $penanganan       = trim($_POST['penanganan'] ?? '');
 $keterangan       = trim($_POST['keterangan'] ?? '');
 
-if ($id <= 0 || $nama_client === '' || $cid === '' || $alamat === '' || $waktu_komplain === '' || $gangguan === '') {
-    die('Data tidak lengkap. <a href="../laporan/index.php">Kembali</a>');
-}
-
+// Whitelist keterangan
 $opsiKeterangan = ['TIKET TMT','PANTAU','TIKET','TIKET MD','GANTI PERANGKAT','CLOSE'];
 if ($keterangan !== '' && !in_array($keterangan, $opsiKeterangan, true)) {
     $keterangan = 'LAINNYA';
+}
+
+// Validasi dasar
+if ($nama_client === '' || $cid === '' || $alamat === '' || $waktu_komplain === '' || $gangguan === '') {
+    die('Data wajib belum lengkap. <a href="../form/input.php">Kembali</a>');
 }
 
 function keMysql($val) {
@@ -35,28 +36,27 @@ function keMysql($val) {
     return str_replace('T', ' ', $val) . ':00';
 }
 
+$stmt = $conn->prepare("
+    INSERT INTO komplain
+    (nama_client, cid, alamat, waktu_komplain, gangguan, merk_alat, efad_area,
+     waktu_penanganan, waktu_konfirmasi, teknisi, penanganan, keterangan)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+");
+
 $wp = keMysql($waktu_penanganan);
 $wk = keMysql($waktu_konfirmasi);
 $waktu_komplain_fmt = keMysql($waktu_komplain);
 
-$stmt = $conn->prepare("
-    UPDATE komplain SET
-        nama_client = ?, cid = ?, alamat = ?, waktu_komplain = ?, gangguan = ?,
-        merk_alat = ?, efad_area = ?, waktu_penanganan = ?, waktu_konfirmasi = ?,
-        teknisi = ?, penanganan = ?, keterangan = ?
-    WHERE id = ?
-");
-
 $stmt->bind_param(
-    'ssssssssssssi',
+    'ssssssssssss',
     $nama_client, $cid, $alamat, $waktu_komplain_fmt, $gangguan, $merk_alat, $efad_area,
-    $wp, $wk, $teknisi, $penanganan, $keterangan, $id
+    $wp, $wk, $teknisi, $penanganan, $keterangan
 );
 
 if ($stmt->execute()) {
-    header('Location: ../laporan/index.php?bulan=' . date('n', strtotime($waktu_komplain_fmt)) . '&tahun=' . date('Y', strtotime($waktu_komplain_fmt)) . '&sukses=2');
+    header('Location: ../laporan/index.php?bulan=' . date('n', strtotime($waktu_komplain_fmt)) . '&tahun=' . date('Y', strtotime($waktu_komplain_fmt)) . '&sukses=1');
 } else {
-    echo 'Gagal memperbarui: ' . $stmt->error;
+    echo 'Gagal menyimpan: ' . $stmt->error;
 }
 $stmt->close();
 $conn->close();
