@@ -106,7 +106,7 @@ class Mpdf extends Pdf
     public function specialErrorHandler(int $errno, string $errstr, string $filename, int $lineno): bool
     {
         if ($errno === E_DEPRECATED) {
-            if (preg_match('/Function mb_\w+[(][)] is deprecated since 8[.]6/', $errstr) === 1) {
+            if (preg_match('/Function mb_\w+[(][)] is deprecated since 8[.]6', $errstr) === 1) {
                 return true;
             }
         }

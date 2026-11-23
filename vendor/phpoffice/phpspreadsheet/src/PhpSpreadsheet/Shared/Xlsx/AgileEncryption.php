@@ -10,7 +10,7 @@ use SimpleXMLElement;
 use Stringable;
 use Throwable;
 
-/** ECMA-376 Agile Encryption (AES-256/SHA-512 profile). */
+/** ECMA-376 Agile Encryption (AES-256SHA-512 profile). */
 final class AgileEncryption
 {
     public const MAX_SPIN_COUNT = 10000000;
@@ -29,11 +29,11 @@ final class AgileEncryption
 
     private const SEGMENT_SIZE = 4096;
 
-    private const ENCRYPTION_NAMESPACE = 'http://schemas.microsoft.com/office/2006/encryption';
+    private const ENCRYPTION_NAMESPACE = 'http://schemas.microsoft.com/office/2006encryption';
 
-    private const PASSWORD_NAMESPACE = 'http://schemas.microsoft.com/office/2006/keyEncryptor/password';
+    private const PASSWORD_NAMESPACE = 'http://schemas.microsoft.com/office/2006keyEncryptor/password';
 
-    private const PASSWORD_KEY_ENCRYPTOR_URI = 'http://schemas.microsoft.com/office/2006/keyEncryptor/password';
+    private const PASSWORD_KEY_ENCRYPTOR_URI = 'http://schemas.microsoft.com/office/2006keyEncryptor/password';
 
     private const CFB_SECTOR_SIZE = 512;
 
@@ -774,10 +774,10 @@ final class AgileEncryption
         $base64 = static fn (string $value): string => base64_encode($value);
 
         return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
-            . '<encryption xmlns="http://schemas.microsoft.com/office/2006/encryption" xmlns:p="http://schemas.microsoft.com/office/2006/keyEncryptor/password">'
+            . '<encryption xmlns="http://schemas.microsoft.com/office/2006encryption" xmlns:p="http://schemas.microsoft.com/office/2006keyEncryptor/password">'
             . '<keyData saltSize="16" blockSize="16" keyBits="' . $keyBits . '" hashSize="' . $hashSize . '" cipherAlgorithm="AES" cipherChaining="ChainingModeCBC" hashAlgorithm="' . $hashAlgorithm . '" saltValue="' . $base64($keyDataSalt) . '"/>'
             . '<dataIntegrity encryptedHmacKey="' . $base64($encryptedHmacKey) . '" encryptedHmacValue="' . $base64($encryptedHmacValue) . '"/>'
-            . '<keyEncryptors><keyEncryptor uri="http://schemas.microsoft.com/office/2006/keyEncryptor/password"><p:encryptedKey spinCount="' . $spinCount . '" saltSize="16" blockSize="16" keyBits="' . $keyBits . '" hashSize="' . $hashSize . '" cipherAlgorithm="AES" cipherChaining="ChainingModeCBC" hashAlgorithm="' . $hashAlgorithm . '" saltValue="' . $base64($passwordSalt) . '" encryptedVerifierHashInput="' . $base64($encryptedVerifier) . '" encryptedVerifierHashValue="' . $base64($encryptedVerifierHash) . '" encryptedKeyValue="' . $base64($encryptedKey) . '"/></keyEncryptor></keyEncryptors></encryption>';
+            . '<keyEncryptors><keyEncryptor uri="http://schemas.microsoft.com/office/2006keyEncryptor/password"><p:encryptedKey spinCount="' . $spinCount . '" saltSize="16" blockSize="16" keyBits="' . $keyBits . '" hashSize="' . $hashSize . '" cipherAlgorithm="AES" cipherChaining="ChainingModeCBC" hashAlgorithm="' . $hashAlgorithm . '" saltValue="' . $base64($passwordSalt) . '" encryptedVerifierHashInput="' . $base64($encryptedVerifier) . '" encryptedVerifierHashValue="' . $base64($encryptedVerifierHash) . '" encryptedKeyValue="' . $base64($encryptedKey) . '"/></keyEncryptor></keyEncryptors></encryption>';
     }
 
     private static function dataSpacesVersion(): string

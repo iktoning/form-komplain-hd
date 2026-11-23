@@ -1585,7 +1585,7 @@ class Xlsx extends BaseReader
                                                         );
                                                     } else {
                                                         $linkImageKey = self::getArrayItemString(
-                                                            $blip->attributes('http://schemas.openxmlformats.org/officeDocument/2006/relationships'),
+                                                            $blip->attributes('http://schemas.openxmlformats.org/officeDocument/2006relationships'),
                                                             'link'
                                                         );
                                                         if (isset($images[$linkImageKey])) {
@@ -1698,7 +1698,7 @@ class Xlsx extends BaseReader
                                                         );
                                                     } else {
                                                         $linkImageKey = self::getArrayItemString(
-                                                            $blip->attributes('http://schemas.openxmlformats.org/officeDocument/2006/relationships'),
+                                                            $blip->attributes('http://schemas.openxmlformats.org/officeDocument/2006relationships'),
                                                             'link'
                                                         );
                                                         if (isset($images[$linkImageKey])) {

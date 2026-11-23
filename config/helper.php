@@ -1,7 +1,9 @@
 <?php
 
 function tanggalIndo($datetime, $withWaktu = true) {
-    if (empty($datetime)) return '';
+    if (empty($datetime) || $datetime === '0000-00-00 00:00:00' || trim($datetime) === '') {
+        return '';
+    }
 
     $bulan = [
         1 => 'Januari', 2 => 'Februari', 3 => 'Maret', 4 => 'April',
@@ -10,6 +12,10 @@ function tanggalIndo($datetime, $withWaktu = true) {
     ];
 
     $ts = strtotime($datetime);
+    if ($ts === false) {
+        return $datetime; 
+    }
+
     $hari = date('d', $ts);
     $bln  = $bulan[(int)date('n', $ts)];
     $thn  = date('Y', $ts);

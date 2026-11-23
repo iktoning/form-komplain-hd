@@ -5,7 +5,7 @@ namespace PhpOffice\PhpSpreadsheet\Chart;
 /**
  * Created by PhpStorm.
  * User: Wiktor Trzonkowski
- * Date: 6/17/14
+ * Date: 617/14
  * Time: 12:11 PM.
  */
 class Axis extends Properties

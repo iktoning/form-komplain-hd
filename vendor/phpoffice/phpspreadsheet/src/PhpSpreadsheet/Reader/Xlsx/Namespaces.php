@@ -6,97 +6,97 @@ class Namespaces
 {
     const SCHEMAS = 'http://schemas.openxmlformats.org';
 
-    const RELATIONSHIPS = 'http://schemas.openxmlformats.org/package/2006/relationships';
+    const RELATIONSHIPS = 'http://schemas.openxmlformats.org/package/2006relationships';
 
     // This one used in Reader\Xlsx
-    const CORE_PROPERTIES = 'http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties';
+    const CORE_PROPERTIES = 'http://schemas.openxmlformats.org/package/2006relationships/metadata/core-properties';
 
     // This one used in Reader\Xlsx\Properties
-    const CORE_PROPERTIES2 = 'http://schemas.openxmlformats.org/package/2006/metadata/core-properties';
+    const CORE_PROPERTIES2 = 'http://schemas.openxmlformats.org/package/2006metadata/core-properties';
 
-    const THUMBNAIL = 'http://schemas.openxmlformats.org/package/2006/relationships/metadata/thumbnail';
+    const THUMBNAIL = 'http://schemas.openxmlformats.org/package/2006relationships/metadata/thumbnail';
 
-    const THEME = 'http://schemas.openxmlformats.org/package/2006/relationships/theme';
+    const THEME = 'http://schemas.openxmlformats.org/package/2006relationships/theme';
 
-    const THEME2 = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/theme';
+    const THEME2 = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/theme';
 
     const COMPATIBILITY = 'http://schemas.openxmlformats.org/markup-compatibility/2006';
 
-    const MAIN = 'http://schemas.openxmlformats.org/spreadsheetml/2006/main';
+    const MAIN = 'http://schemas.openxmlformats.org/spreadsheetml/2006main';
 
-    const RELATIONSHIPS_DRAWING = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/drawing';
+    const RELATIONSHIPS_DRAWING = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/drawing';
 
-    const DRAWINGML = 'http://schemas.openxmlformats.org/drawingml/2006/main';
+    const DRAWINGML = 'http://schemas.openxmlformats.org/drawingml/2006main';
 
-    const CHART = 'http://schemas.openxmlformats.org/drawingml/2006/chart';
+    const CHART = 'http://schemas.openxmlformats.org/drawingml/2006chart';
 
     const CHART_EX = 'http://schemas.microsoft.com/office/drawing/2014/chartex';
 
     const CHART_ALTERNATE = 'http://schemas.microsoft.com/office/drawing/2007/8/2/chart';
 
-    const RELATIONSHIPS_CHART = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/chart';
+    const RELATIONSHIPS_CHART = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/chart';
 
     const RELATIONSHIPS_CHART_EX = 'http://schemas.microsoft.com/office/2014/relationships/chartEx';
 
-    const SPREADSHEET_DRAWING = 'http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing';
+    const SPREADSHEET_DRAWING = 'http://schemas.openxmlformats.org/drawingml/2006spreadsheetDrawing';
 
-    const SCHEMA_OFFICE_DOCUMENT = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships';
+    const SCHEMA_OFFICE_DOCUMENT = 'http://schemas.openxmlformats.org/officeDocument/2006relationships';
 
-    const COMMENTS = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/comments';
+    const COMMENTS = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/comments';
 
-    const RELATIONSHIPS_CUSTOM_PROPERTIES = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/custom-properties';
+    const RELATIONSHIPS_CUSTOM_PROPERTIES = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/custom-properties';
 
-    const RELATIONSHIPS_EXTENDED_PROPERTIES = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties';
+    const RELATIONSHIPS_EXTENDED_PROPERTIES = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/extended-properties';
 
-    const RELATIONSHIPS_CTRLPROP = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/ctrlProp';
+    const RELATIONSHIPS_CTRLPROP = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/ctrlProp';
 
-    const CUSTOM_PROPERTIES = 'http://schemas.openxmlformats.org/officeDocument/2006/custom-properties';
+    const CUSTOM_PROPERTIES = 'http://schemas.openxmlformats.org/officeDocument/2006custom-properties';
 
-    const EXTENDED_PROPERTIES = 'http://schemas.openxmlformats.org/officeDocument/2006/extended-properties';
+    const EXTENDED_PROPERTIES = 'http://schemas.openxmlformats.org/officeDocument/2006extended-properties';
 
-    const PROPERTIES_VTYPES = 'http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes';
+    const PROPERTIES_VTYPES = 'http://schemas.openxmlformats.org/officeDocument/2006docPropsVTypes';
 
-    const HYPERLINK = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink';
+    const HYPERLINK = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/hyperlink';
 
-    const OFFICE_DOCUMENT = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument';
+    const OFFICE_DOCUMENT = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/officeDocument';
 
-    const SHARED_STRINGS = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/sharedStrings';
+    const SHARED_STRINGS = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/sharedStrings';
 
-    const STYLES = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles';
+    const STYLES = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/styles';
 
-    const IMAGE = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/image';
+    const IMAGE = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/image';
 
-    const VML = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/vmlDrawing';
+    const VML = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/vmlDrawing';
 
-    const WORKSHEET = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet';
+    const WORKSHEET = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/worksheet';
 
-    const CHARTSHEET = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/chartsheet';
+    const CHARTSHEET = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/chartsheet';
 
-    const SCHEMA_MICROSOFT = 'http://schemas.microsoft.com/office/2006/relationships';
+    const SCHEMA_MICROSOFT = 'http://schemas.microsoft.com/office/2006relationships';
 
-    const EXTENSIBILITY = 'http://schemas.microsoft.com/office/2006/relationships/ui/extensibility';
+    const EXTENSIBILITY = 'http://schemas.microsoft.com/office/2006relationships/ui/extensibility';
 
-    const VBA = 'http://schemas.microsoft.com/office/2006/relationships/vbaProject';
+    const VBA = 'http://schemas.microsoft.com/office/2006relationships/vbaProject';
 
-    const VBA_SIGNATURE = 'http://schemas.microsoft.com/office/2006/relationships/vbaProject';
+    const VBA_SIGNATURE = 'http://schemas.microsoft.com/office/2006relationships/vbaProject';
 
     const DATA_VALIDATIONS1 = 'http://schemas.microsoft.com/office/spreadsheetml/2009/9/main';
 
-    const DATA_VALIDATIONS2 = 'http://schemas.microsoft.com/office/excel/2006/main';
+    const DATA_VALIDATIONS2 = 'http://schemas.microsoft.com/office/excel/2006main';
 
-    const CONTENT_TYPES = 'http://schemas.openxmlformats.org/package/2006/content-types';
+    const CONTENT_TYPES = 'http://schemas.openxmlformats.org/package/2006content-types';
 
-    const RELATIONSHIPS_METADATA = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/sheetMetadata';
+    const RELATIONSHIPS_METADATA = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/sheetMetadata';
 
-    const RELATIONSHIPS_PRINTER_SETTINGS = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/printerSettings';
+    const RELATIONSHIPS_PRINTER_SETTINGS = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/printerSettings';
 
-    const RELATIONSHIPS_TABLE = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/table';
+    const RELATIONSHIPS_TABLE = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/table';
 
-    const RELATIONSHIPS_PIVOT_TABLE = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable';
+    const RELATIONSHIPS_PIVOT_TABLE = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/pivotTable';
 
-    const RELATIONSHIPS_PIVOT_CACHE_DEFINITION = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotCacheDefinition';
+    const RELATIONSHIPS_PIVOT_CACHE_DEFINITION = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/pivotCacheDefinition';
 
-    const RELATIONSHIPS_PIVOT_CACHE_RECORDS = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotCacheRecords';
+    const RELATIONSHIPS_PIVOT_CACHE_RECORDS = 'http://schemas.openxmlformats.org/officeDocument/2006relationships/pivotCacheRecords';
 
     const SPREADSHEETML_AC = 'http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac';
 
@@ -134,11 +134,11 @@ class Namespaces
 
     const DYNAMIC_ARRAY_RICHDATA = 'http://schemas.microsoft.com/office/spreadsheetml/2017/richdata';
 
-    const RELATIONSHIPS_RICH_VALUE_TYPES = 'http://schemas.microsoft.com/office/2017/06/relationships/rdRichValueTypes';
+    const RELATIONSHIPS_RICH_VALUE_TYPES = 'http://schemas.microsoft.com/office/2017/06relationships/rdRichValueTypes';
 
-    const RELATIONSHIPS_RICH_VALUE_STRUCTURE = 'http://schemas.microsoft.com/office/2017/06/relationships/rdRichValueStructure';
+    const RELATIONSHIPS_RICH_VALUE_STRUCTURE = 'http://schemas.microsoft.com/office/2017/06relationships/rdRichValueStructure';
 
-    const RELATIONSHIPS_RICH_VALUE = 'http://schemas.microsoft.com/office/2017/06/relationships/rdRichValue';
+    const RELATIONSHIPS_RICH_VALUE = 'http://schemas.microsoft.com/office/2017/06relationships/rdRichValue';
 
     const RELATIONSHIPS_RICH_VALUE_REL = 'http://schemas.microsoft.com/office/2022/10/relationships/richValueRel';
 

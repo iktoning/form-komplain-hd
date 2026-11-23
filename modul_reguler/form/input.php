@@ -27,19 +27,20 @@ require_once __DIR__ . '/../../config/db.php';
 
             <!-- ==== KOLOM KIRI ==== -->
             <div class="form-group">
-                <label>Nama Client <span class="required">*</span></label>
-                <input type="text" name="nama_client" required autofocus>
-            </div>
-
-            <div class="form-group">
                 <label>CID <span class="required">*</span></label>
-                <input type="text" name="cid" required>
+                <input type="text" name="cid" id="input-cid" required onblur="fetchDataPelanggan()" autofocus>
+                <small id="loading-text" style="color: blue; display: none;">Mencari data...</small>
+            </div>
+            
+            <div class="form-group">
+                <label>Nama Client <span class="required">*</span></label>
+                <input type="text" name="nama_client" id="input-nama" required>
             </div>
 
             <!-- ==== FULL WIDTH ==== -->
             <div class="form-group full-width">
                 <label>Alamat <span class="required">*</span></label>
-                <textarea name="alamat" required placeholder="Alamat lengkap pelanggan..."></textarea>
+                <textarea name="alamat" id="input-alamat" required></textarea>
             </div>
 
             <div class="form-group">
@@ -183,9 +184,16 @@ function fetchDataPelanggan() {
 
     loadingText.style.display = 'block';
 
-    // Memanggil file perantara PHP kita
+    // Coba panggil API
     fetch(`../proses/get_pelanggan.php?cid=${encodeURIComponent(cid)}`)
-        .then(response => response.json())
+        .then(async response => {
+            // Cek jika HTTP status bukan 200 (misal 500, 404)
+            if (!response.ok) {
+                const textError = await response.text(); // Ambil pesan error aslinya
+                throw new Error(`HTTP Error ${response.status}: ${textError.substring(0, 100)}`);
+            }
+            return response.json(); // Ubah ke JSON
+        })
         .then(data => {
             loadingText.style.display = 'none';
             
@@ -193,7 +201,6 @@ function fetchDataPelanggan() {
                 inputNama.value = data.nama;
                 inputAlamat.value = data.alamat;
                 
-                // Efek visual (opsional)
                 inputNama.style.backgroundColor = '#e8f4ec';
                 inputAlamat.style.backgroundColor = '#e8f4ec';
                 setTimeout(() => {
@@ -208,8 +215,9 @@ function fetchDataPelanggan() {
         })
         .catch(error => {
             loadingText.style.display = 'none';
-            console.error('Error:', error);
-            alert('Terjadi kesalahan jaringan.');
+            console.error('Detail Error:', error);
+            // Tampilkan pesan error aslinya ke layar
+            alert('Gagal mengambil data. Cek Console (F12) untuk detail.\n\nPesan: ' + error.message);
         });
 }
 </script>

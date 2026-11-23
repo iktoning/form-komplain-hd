@@ -118,7 +118,7 @@ class RichDataDrawing
         $xml->writeAttribute('xmlns', 'http://schemas.microsoft.com/office/spreadsheetml/2017/richdata2');
         $xml->writeAttribute('xmlns:mc', 'http://schemas.openxmlformats.org/markup-compatibility/2006');
         $xml->writeAttribute('mc:Ignorable', 'x');
-        $xml->writeAttribute('xmlns:x', 'http://schemas.openxmlformats.org/spreadsheetml/2006/main');
+        $xml->writeAttribute('xmlns:x', 'http://schemas.openxmlformats.org/spreadsheetml/2006main');
 
         $xml->startElement('global');
         $xml->startElement('keyFlags');
@@ -159,7 +159,7 @@ class RichDataDrawing
         $xml->startDocument('1.0', 'UTF-8', 'yes');
         $xml->startElement('richValueRels');
         $xml->writeAttribute('xmlns', 'http://schemas.microsoft.com/office/spreadsheetml/2022/richvaluerel');
-        $xml->writeAttribute('xmlns:r', 'http://schemas.openxmlformats.org/officeDocument/2006/relationships');
+        $xml->writeAttribute('xmlns:r', 'http://schemas.openxmlformats.org/officeDocument/2006relationships');
 
         $index = 0;
         foreach ($this->drawings as $drawing) {
@@ -178,13 +178,13 @@ class RichDataDrawing
         $xml = new XMLWriter(XMLWriter::STORAGE_MEMORY);
         $xml->startDocument('1.0', 'UTF-8', 'yes');
         $xml->startElement('Relationships');
-        $xml->writeAttribute('xmlns', 'http://schemas.openxmlformats.org/package/2006/relationships');
+        $xml->writeAttribute('xmlns', 'http://schemas.openxmlformats.org/package/2006relationships');
 
         $index = 0;
         foreach ($this->drawings as $drawing) {
             $xml->startElement('Relationship');
             $xml->writeAttribute('Id', 'rId' . ++$index);
-            $xml->writeAttribute('Type', 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/image');
+            $xml->writeAttribute('Type', 'http://schemas.openxmlformats.org/officeDocument/2006relationships/image');
             $xml->writeAttribute('Target', '../media/' . ($this->writer?->getDrawingMediaFilename($drawing) ?? $drawing->getIndexedFilename()));
             $xml->endElement();
         }
