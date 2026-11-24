@@ -60,11 +60,39 @@ require_once __DIR__ . '/../../config/db.php';
                 <label>Gangguan <span class="required">*</span></label>
                 <select name="gangguan" required>
                     <option value="">-- Pilih Gangguan --</option>
-                    <option>WIFI LOSS</option>
-                    <option>Kabel Putus</option>
-                    <option>Perangkat Rusak</option>
-                    <option>Gangguan Massal</option>
-                    <option>Lainnya</option>
+                    <option>WiFi LOSS</option>
+                    <option>WiFi Lambat Akses Sosmed</option>
+                    <option>WiFi Gangguan Akses Link</option>
+                    <option>WiFi Dying Gasp</option>
+                    <option>PPPoE Offline</option>
+                    <option>Ganti Password</option>
+                    <option>WiFi Synchronize</option>
+                    <option>Lupa Password</option>
+                    <option>Gangguan di Alat Tambahan</option>
+                    <option>Speedtest Kecil</option>
+                    <option>Ganti SSID</option>
+                    <option>SSID Tidak Muncul</option>
+                    <option>Redaman Tinggi</option>
+                    <option>WiFi Tidak Dapat Internet</option>
+                    <option>CCTV Mati</option>
+                    <option>Ganti SSID dan Password</option>
+                    <option>Bar Sinyal Kecil</option>
+                    <option>Full Pemakaian</option>
+                    <option>Wifi On/Off</option>
+                    <option>Perapihan Kabel FO Jatuh/Kendor</option>
+                    <option>Konekkan CCTV ke HP</option>
+                    <option>Rx/Tx Terpantau 0</option>
+                    <option>After Minta Screenshot Normal</option>
+                    <option>IP Konflik</option>
+                    <option>Gangguan TV</option>
+                    <option>PPPoE Tidak Bisa di Remote</option>
+                    <option>Tidak Bisa Connect ke WiFi</option>
+                    <option>Gangguan Buka M-Banking</option>
+                    <option>Port LAN On/Off</option>
+                    <option>WiFi Sering Gangguan</option>
+                    <option>Ganti ONT</option>
+                    <option>WiFi Tidak Bisa Connect Komputer</option>
+                    <option>Technical Visiting</option>
                 </select>
             </div>
 
@@ -74,8 +102,10 @@ require_once __DIR__ . '/../../config/db.php';
                     <option value="">-- Pilih Merk --</option>
                     <option>ZTE</option>
                     <option>CDATA</option>
-                    <!-- <option>Huawei</option>
-                    <option>Tp-Link</option> -->
+                    <option>Huawei</option>
+                    <option>ZTE China</option>
+                    <option>Tp-Link</option>
+                    <option>Nokia</option>
                 </select>
             </div>
 
@@ -85,6 +115,11 @@ require_once __DIR__ . '/../../config/db.php';
                     <option value="">-- Pilih Lead Area --</option>
                     <option>Sumariana</option>
                     <option>Sudiartana</option>
+                    <option>Dwipa</option>
+                    <option>Salman</option>
+                    <option>MD</option>
+                    <option>FS</option>
+                    <option>Telkom</option>
                 </select>
             </div>
 
@@ -113,13 +148,18 @@ require_once __DIR__ . '/../../config/db.php';
                 </div>
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label>Teknisi/NOC</label>
                 <select name="teknisi">
                     <option value="">-- Pilih Teknisi --</option>
-                    <option>Dwiya</option>
+                    <option></option>
                     <option>Andi</option>
                 </select>
+            </div> -->
+
+            <div class="form-group">
+                <label>Teknisi/NOC</label>
+                <input type="text" name="teknisi">
             </div>
 
             <div class="form-group">
@@ -127,9 +167,22 @@ require_once __DIR__ . '/../../config/db.php';
                 <select name="penanganan">
                     <option value="">-- Pilih Penanganan --</option>
                     <option>Lapangan</option>
-                    <option>MD</option>
-                    <option>Restart</option>
-                    <option>Ganti Perangkat</option>
+                    <option>Sudah diinfokan</option>
+                    <option>Sudah digantikan</option>
+                    <option>Restart ONU</option>
+                    <option>Restart. Ganti CH. Ganti Freq. Ganti Mode. Enable SGI</option>
+                    <option>System</option>
+                    <option>Config Ulang</option>
+                    <option>No Action</option>
+                    <option>Ganti Freq di AP</option>
+                    <option>Setting Firewall NAT</option>
+                    <option>Ganti IP</option>
+                    <option>Ganti SSID</option>
+                    <option>Connect Ulang ke WiFi</option>
+                    <option>Reset ONU</option>
+                    <option>Disable LAN</option>
+                    <option>Upgrade Firmware</option>
+                    <option>Ganti DNS Mode</option>
                 </select>
             </div>
 
@@ -137,12 +190,15 @@ require_once __DIR__ . '/../../config/db.php';
                 <label>Keterangan</label>
                 <select name="keterangan">
                     <option value="">-- Pilih Keterangan --</option>
-                    <option>TIKET TMT</option>
-                    <option>PANTAU</option>
-                    <option>TIKET</option>
-                    <option>TIKET MD</option>
-                    <option>GANTI PERANGKAT</option>
-                    <option>CLOSE</option>
+                    <option>Sudah Normal</option>
+                    <option>Pantau</option>
+                    <option>Belum Konfirmasi</option>
+                    <option>Belum Buat Tiket</option>
+                    <option>Tiket</option>
+                    <option>Tiket MD</option>
+                    <option>Tiket TMT</option>
+                    <option>Tiket Telkom</option>
+                    <option>Tiket TMH</option>
                 </select>
             </div>
         </div>
